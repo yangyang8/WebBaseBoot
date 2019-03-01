@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+
+    <!--指定了驱动jar包的位置,我用的是mysql -->
+    <classPathEntry
+            location="C:\Users\jizui\.m2\repository\mysql\mysql-connector-java\8.0.13/mysql-connector-java-8.0.13.jar" />
+    <!--本机数据库驱动jar包存放目录-->
+    <context id="DB2Tables"    targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库驱动，数据库地址及表名，账号，密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/im?serverTimezone=GMT%2B8"  userId="root" password="123456">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成Model类的包名及存放位置-->
+        <javaModelGenerator targetPackage="com.hailong.im.domain" targetProject="src/test/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成映射文件的包名及存放位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/test/java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类的包名及存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.hailong.im.mapper" targetProject="src/test/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--生成对应表及类名,domainObjectName是设置实体类的名字的-->
+        <!--<table tableName="chat_msg" domainObjectName="TbChatMsg" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>-->
+        <!--<table tableName="friends_request" domainObjectName="TbFriendsRequest" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>-->
+        <!--<table tableName="my_friends" domainObjectName="TbMyFriends" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>-->
+        <table tableName="users" domainObjectName="TbUsers" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+    </context>
+</generatorConfiguration>
