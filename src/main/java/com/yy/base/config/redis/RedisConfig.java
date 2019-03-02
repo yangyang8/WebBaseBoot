@@ -24,7 +24,13 @@ public class RedisConfig extends ObtainAppliationPropertis{
         String host=getStringOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REIDS_HOST,"127.0.0.1");
         Integer port=getIntOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REDIS_PORT,6379);
 
-        return new JedisPool(config, host, port);
+        Integer timeout=getIntOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REDIS_TIMEOUT,3600);
+
+        String password=getStringOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REDIS_PASSWORD,"123456");
+
+        Integer database=getIntOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REDIS_TIMEOUT,0);
+
+        return new JedisPool(config,host,port,timeout, password, database,null);
     }
 
 
@@ -47,7 +53,7 @@ public class RedisConfig extends ObtainAppliationPropertis{
         Integer minIdel = getIntOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REDIS_MINIDEL, 5);
         Integer maxTotal=getIntOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REDIS_MAXTOTAL,100);
         Integer maxWaitMillis=getIntOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REDIS_MAXWAITMILLIS,3600);
-        Integer timeout=getIntOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REDIS_TIMEOUT,3600);
+
         Integer minEvictableIdleTimeMillis=getIntOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REDIS_MINEVICABLEIDELTIMEMILLIS,3600);
         Integer numTestsPerEvictionRun=getIntOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REDIS_NUMTESTSPEREVICTIONNUN,3600);
         Integer timeBetweenEvictionRunsMillis=getIntOrDefault(RedisPropertisKeyConstant.BOOTBASE_KEY_REDIS_TIMEBETWEENEVICTIONRUNMILLIS,3600);

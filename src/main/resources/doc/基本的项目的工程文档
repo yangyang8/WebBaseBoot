@@ -1,14 +1,19 @@
 第一个版本:
-    1实现Mybatis的相关的启动类配置
-    2实现Redis的相关启动类配置
+    1实现Mybatis的相关的启动类配置    ok
+    2实现Redis的相关启动类配置        ok
     3实现Mongodb的相关启动配置
     4实现Kafka的相关启动类配置
     5实现rabbitmq的相关启动配置
     6实现elstatisearch的相关配置
     7实现solr的相关配置
-    8实现swagger的相关配置
-    9实现日志处理系统
+    8实现swagger的相关配置          ok
+    9实现日志处理系统               ok
     10实现性能分析系统
+    11实现Mybatis的自动生成代码功能    ok
+    12实现Mybatis的集成pageHelper分页插件功能        ok
+    13实现后端参数校验功能
+    14实现统一exception处理功能
+
 
 
 
@@ -20,3 +25,5 @@
     角色管理
     资源管理
     日志管理
+    IM即时通信系统(分为机器人聊天和人工聊天)
+    工作流管理功能

@@ -23,6 +23,7 @@
 		<mybatis-ehcache>1.0.0</mybatis-ehcache>
         <spring-redis>2.1.5.RELEASE</spring-redis>
 		<jredis>2.10.2</jredis>
+		<fastjson>1.2.47</fastjson>
 	</properties>
 
 	<dependencies>
@@ -175,6 +176,14 @@
 			<artifactId>jedis</artifactId>
 			<version>${jredis}</version>
 		</dependency>
+
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson}</version>
+		</dependency>
+
 
 
 
